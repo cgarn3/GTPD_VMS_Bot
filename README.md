@@ -1,39 +1,102 @@
 # GTPD_VMS_Bot
 
-This bot is implemented using Angular2 with Typescript. Refer [here](https://angular.io/docs/ts/latest/) for Angular2 documentation.
+This application is an automated bot used to diagnose and troubleshoot malfunctioning security cameras for the Georgia Tech Police Department. More information can be found at the bottom in the 'Background' section.
 
-All the UI components are PrimeNG components. Refer [here](https://www.primefaces.org/primeng/#/) for PrimeNG documentation.
+Some things to note:
+- This application is implemented using Angular2 with Typescript. Refer [here](https://angular.io/docs/ts/latest/) for Angular2 documentation.
+- All the UI components are PrimeNG components. Refer [here](https://www.primefaces.org/primeng/#/) for PrimeNG documentation.
+- This application leverages Python 3.
+- Angular handles all its own URL routing. Flask just serves the "index.html" regardless of where the user navigates.
 
-I also recommend using Visual Studio Code which can be downloaded [here](https://code.visualstudio.com/).
+## How to Run locally:
 
-## How to Run:
+**If this is your first time running this application, please refer to the 'Onet-time Setup' directions.**
+**Otherwise, follow the instructions below.**
 
-Simply run `npm start` in the directory of this repo on your local machine. **If this is your first time running this project, please refer to the 'Onet-time Setup' directions below.**
+------------------------------------------------------------------------
+**MacOS / Linux:**
 
-`npm start` spins up a lite server that will open the app in your browser at localhost. The server watches for changes, so if any changes are made in the code, it will detect the changes and automatically refresh the page in the browser to reflect the changes.
+1. Navigate to this repository on your local machine
+2. Start the server:
+    ```
+    make run
+    ```
+
+3. Navigate to [localhost:8080](http://localhost:8080/) in your browser
+
+**Windows:**
+
+1. Navigate to this repository on your local machine
+2. Start the server:
+    ```
+    python main.py
+    ```
+
+3. Navigate to [localhost:8080](http://localhost:8080/) in your browser
+
+------------------------------------------------------------------------
 
 **One-time Setup:**
 
-1. Make sure node and npm are installed which can be found [here](https://docs.npmjs.com/getting-started/installing-node).
-
-2. Clone this repo. 
+1. Clone this repo:
     ```
     git clone https://github.gatech.edu/cgarn3/GTPD_VMS_Bot.git GTPD
     ```
 
-3. Install the npm packages. 
-    ```
-    cd GTPD
-    npm install
-    ```
-    **npm install fails in Bash for Windows which does not support networking to servers as of January, 2017.**
+2. Download [Python 3](https://www.python.org/downloads/) if you do not already have it
 
-4. Start the app.
-    ```
-    npm start
-    ```
-    **npm start fails in Bash for Windows which does not support networking to servers as of January, 2017.**
+3. Install `node` and `npm` which can be found [here](https://docs.npmjs.com/getting-started/installing-node)
 
+4. Install the necessary typescript modules:    
+    ```
+    npm install -g typescript
+    ```
+
+5. Install [pip](https://pip.pypa.io/en/stable/installing/) if you do not already have it
+
+6.  Follow the instructions for your OS
+
+**MacOS / Linux:**
+
+1. Update pip:
+    ```
+    pip install -U pip
+    ```
+
+2. Install the required dependencies:
+    ```
+    make install
+    ```
+
+3. Start the server:
+    ```
+    make run
+    ```
+
+4. Navigate to [localhost:8080](http://localhost:8080/) in your browser
+
+**Windows:**
+
+1. Update pip:
+    ```
+    python -m pip install -U pip
+    ```
+
+2. Manually install the required dependencies:
+    ```
+    python -m pip install -r requirements.txt
+    npm --prefix ./templates install ./templates
+    tsc -p ./templates
+    ```
+
+3. Start the server:
+    ```
+    python main.py
+    ```
+
+4. Navigate to [localhost:8080](http://localhost:8080/) in your browser
+
+------------------------------------------------------------------------
 
 ## Background:
 
